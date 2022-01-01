@@ -20,11 +20,11 @@ namespace NetflixHistory {
 
 
         private class Filename {
-            public const string shows = "SHOWS.txt";
-            public const string movies = "MOVIES.txt";
-            public const string errors = "ERRORS.txt";
-            public const string forbidden = "FORBIDDEN.txt";
-            public const string notFound = "NOTFOUND.txt";
+            public const string shows = "Result/SHOWS.txt";
+            public const string movies = "Result/MOVIES.txt";
+            public const string errors = "Result/ERRORS.txt";
+            public const string forbidden = "Result/FORBIDDEN.txt";
+            public const string notFound = "Result/NOTFOUND.txt";
         }
 
         private async void BtnLoadNetflixHistory_Click(object sender, EventArgs e) {
@@ -193,7 +193,7 @@ namespace NetflixHistory {
             
             var lines = titles.Select(t => t["title"].ToString());
 
-            File.WriteAllLinesAsync(filename, lines);
+            File.WriteAllLinesAsync("../../../" + filename, lines);
         }
 
         delegate void SetTextCallback(string text);
